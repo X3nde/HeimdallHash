@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Heimdallhash": {
+        "commandLineArgs": "--console",
+        "commandName": "Project",
+        "dotnetRunMessages": true,
+        "environmentVariables": {
+            "DOTNET_ENVIRONMENT": "Development"
+        }
+    }
+  }
+}
