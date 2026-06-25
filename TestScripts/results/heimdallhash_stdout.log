@@ -1,0 +1,392 @@
+info: Heimdallhash.Worker[0]
+      HEIMDALLHASH iniciado correctamente. Intervalo: 5 segundos
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Iniciando validaci¢n de directorios de HeimdallHash.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Directorio interno creado: Storage.TempDirectory = C:\HeimdallHashData\Temp
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Directorio interno creado: Quarantine.RootDirectory = C:\HeimdallHashData\Cuarentena
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Directorio interno creado: PendingDelivery.RootDirectory = C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Directorio interno creado: RecordBooks.RootDirectory = C:\HeimdallHashData\LibrosRegistro
+info: Heimdallhash.Services.DirectoryStartupValidator[0]
+      Validaci¢n de directorios de HeimdallHash finalizada.
+info: Heimdallhash.Services.ConfigurationSanityValidator[0]
+      Iniciando validaci¢n de coherencia de configuraci¢n.
+warn: Heimdallhash.Services.ConfigurationSanityValidator[0]
+      MD5/SHA1 est n habilitados por compatibilidad. No se recomienda su uso para nuevos flujos.
+warn: Heimdallhash.Services.ConfigurationSanityValidator[0]
+      Las notificaciones est n habilitadas pero SMTP no tiene configuraci¢n m¡nima completa. Se registrar n como FAILED en el LR de Notificaciones.
+info: Heimdallhash.Services.ConfigurationSanityValidator[0]
+      Validaci¢n de coherencia de configuraci¢n finalizada.
+info: Heimdallhash.Services.RecordBookMaintenanceService[0]
+      No hay libros diarios antiguos pendientes de fusionar.
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:25 +02:00
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:25 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:30 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_VALID_DN_1234_Download.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_VALID_DN_1234_Download.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_VALID_DN_1234_Download.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_VALID_DN_1234_Download_39235e23bfce4fd49e1fd04ffeceef37.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_VALID_DN_1234_Download_39235e23bfce4fd49e1fd04ffeceef37\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_VALID_DN_1234_Download_39235e23bfce4fd49e1fd04ffeceef37.
+info: Heimdallhash.Services.FileProcessor[0]
+      Producto v lido movido a destino: C:\HeimdallHashLab\Origenes\EntradaProductos\HH_VALID_DN_1234_Download.zip -> C:\HeimdallHashLab\Destinos\Centro1234\Download\HH_VALID_DN_1234_Download.zip
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto aceptado registrado en libro diario: HH_VALID_DN_1234_Download.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Aceptados\Diarios\20260622_LR_productos_aceptados.csv
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:30 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:35 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_HASH_1234_Download.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_HASH_1234_Download.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_HASH_1234_Download.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_HASH_1234_Download_d737fce299ae4a9b8753c8df1f9dcec5.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_HASH_1234_Download_d737fce299ae4a9b8753c8df1f9dcec5\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_HASH_1234_Download_d737fce299ae4a9b8753c8df1f9dcec5.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_HASH_1234_Download.zip. Motivo: HASH_MISMATCH. Detalle: HASH_MISMATCH: El hash real del fichero no coincide con el hash declarado en la Delivery Note.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_HASH_1234_Download.zip. Motivo: HASH_MISMATCH. Detalle: HASH_MISMATCH: El hash real del fichero no coincide con el hash declarado en la Delivery Note.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_HASH_1234_Download.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_HASH_1234_Download.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:35 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:40 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_NO_XML.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_NO_XML.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_NO_XML.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_NO_XML_fe9541b6666a477f81eaf15feae2f141.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_NO_XML_fe9541b6666a477f81eaf15feae2f141.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_NO_XML.zip. Motivo: DN_XML_NOT_FOUND_IN_PACKAGE. Detalle: DN_XML_NOT_FOUND_IN_PACKAGE: El paquete no contiene ning£n fichero XML de Delivery Note.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_NO_XML.zip. Motivo: DN_XML_NOT_FOUND_IN_PACKAGE. Detalle: DN_XML_NOT_FOUND_IN_PACKAGE: El paquete no contiene ning£n fichero XML de Delivery Note.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_NO_XML.zip. Libro: C:\HeimdallHashData\LibrosRegistro\SinResolver\Cuarentena\Diarios\20260622_LR_productos_cuarentena_sinresolver.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_NO_XML.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:40 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:45 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_TWO_XML.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_TWO_XML.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_TWO_XML.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_TWO_XML_afb3b9c870dd43539cf82d73a04cdd0d.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_TWO_XML_afb3b9c870dd43539cf82d73a04cdd0d.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_TWO_XML.zip. Motivo: DN_MULTIPLE_XML_FOUND_IN_PACKAGE. Detalle: DN_MULTIPLE_XML_FOUND_IN_PACKAGE: El paquete contiene m s de un fichero XML. No se puede determinar cu l es la Delivery Note. XML encontrados: DeliveryNote.xml, DeliveryNote_2.xml
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_TWO_XML.zip. Motivo: DN_MULTIPLE_XML_FOUND_IN_PACKAGE. Detalle: DN_MULTIPLE_XML_FOUND_IN_PACKAGE: El paquete contiene m s de un fichero XML. No se puede determinar cu l es la Delivery Note. XML encontrados: DeliveryNote.xml, DeliveryNote_2.xml
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_TWO_XML.zip. Libro: C:\HeimdallHashData\LibrosRegistro\SinResolver\Cuarentena\Diarios\20260622_LR_productos_cuarentena_sinresolver.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_TWO_XML.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:45 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:50 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_VALID_PENDING_1234_Download.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_VALID_PENDING_1234_Download.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_VALID_PENDING_1234_Download.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_VALID_PENDING_1234_Download_09e320f3845444b5aa8bd93bae0c254e.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_VALID_PENDING_1234_Download_09e320f3845444b5aa8bd93bae0c254e\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_VALID_PENDING_1234_Download_09e320f3845444b5aa8bd93bae0c254e.
+warn: Heimdallhash.Services.FileProcessor[0]
+      La ruta destino no existe o no es accesible y el servicio no est  autorizado a crearla: C:\HeimdallHashLab\Destinos\Centro1234\Download
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n PENDING_CREATED para el producto HH_VALID_PENDING_1234_Download.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+warn: Heimdallhash.Services.PendingDeliveryService[0]
+      Producto v lido registrado como pendiente de entrega: HH_VALID_PENDING_1234_Download.zip. Ruta pendiente: C:\HeimdallHashData\PendienteEntrega\Centros\1234\Download\Productos\HH_VALID_PENDING_1234_Download.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\PendienteEntrega\Diarios\20260622_LR_productos_pendiente_entrega.csv
+info: Heimdallhash.Services.ErrorLogger[0]
+      Se registraron 1 errores t‚cnicos en el ciclo 6. Ruta: C:\HeimdallHashData\LogsAplicacion\Errores\Diarios\20260622_log_errores.csv
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Se han detectado 1 producto(s) pendiente(s) de entrega para reintento.
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Reintentando entrega pendiente. Producto: HH_VALID_PENDING_1234_Download.zip. Centro: 1234. Flujo: Download. Ruta pendiente: C:\HeimdallHashData\PendienteEntrega\Centros\1234\Download\Productos\HH_VALID_PENDING_1234_Download.zip
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Destino resuelto para producto pendiente HH_VALID_PENDING_1234_Download.zip: C:\HeimdallHashLab\Destinos\Centro1234\Download
+warn: Heimdallhash.Services.PendingDeliveryService[0]
+      Producto pendiente no entregado: HH_VALID_PENDING_1234_Download.zip. Centro: 1234. Flujo: Download. Motivo: DESTINATION_PATH_NOT_AVAILABLE
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:50 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:08:55 +02:00
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Se han detectado 1 producto(s) pendiente(s) de entrega para reintento.
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Reintentando entrega pendiente. Producto: HH_VALID_PENDING_1234_Download.zip. Centro: 1234. Flujo: Download. Ruta pendiente: C:\HeimdallHashData\PendienteEntrega\Centros\1234\Download\Productos\HH_VALID_PENDING_1234_Download.zip
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Destino resuelto para producto pendiente HH_VALID_PENDING_1234_Download.zip: C:\HeimdallHashLab\Destinos\Centro1234\Download
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n PENDING_DELIVERED para el producto HH_VALID_PENDING_1234_Download.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Producto pendiente entregado correctamente: HH_VALID_PENDING_1234_Download.zip. Destino: C:\HeimdallHashLab\Destinos\Centro1234\Download\HH_VALID_PENDING_1234_Download.zip
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:08:55 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:00 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_DECLARED_FILE_MISSING.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_DECLARED_FILE_MISSING.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_DECLARED_FILE_MISSING.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_DECLARED_FILE_MISSING_7daa7265bfee487a9171d2fd05912ee3.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_DECLARED_FILE_MISSING_7daa7265bfee487a9171d2fd05912ee3\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_DECLARED_FILE_MISSING_7daa7265bfee487a9171d2fd05912ee3.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_DECLARED_FILE_MISSING.zip. Motivo: PACKAGE_DECLARED_FILE_NOT_FOUND. Detalle: PACKAGE_DECLARED_FILE_NOT_FOUND: El fichero declarado en la Delivery Note no existe dentro del paquete.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_DECLARED_FILE_MISSING.zip. Motivo: PACKAGE_DECLARED_FILE_NOT_FOUND. Detalle: PACKAGE_DECLARED_FILE_NOT_FOUND: El fichero declarado en la Delivery Note no existe dentro del paquete.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_DECLARED_FILE_MISSING.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_DECLARED_FILE_MISSING.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:00 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:05 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_EXTRA_FILE.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_EXTRA_FILE.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_EXTRA_FILE.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_EXTRA_FILE_aea9983c4e7240c68b3b3c19b5d8b0c1.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_EXTRA_FILE_aea9983c4e7240c68b3b3c19b5d8b0c1\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_EXTRA_FILE_aea9983c4e7240c68b3b3c19b5d8b0c1.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_EXTRA_FILE.zip. Motivo: PACKAGE_UNDECLARED_FILE. Detalle: PACKAGE_UNDECLARED_FILE: El paquete contiene un fichero no declarado en la Delivery Note.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_EXTRA_FILE.zip. Motivo: PACKAGE_UNDECLARED_FILE. Detalle: PACKAGE_UNDECLARED_FILE: El paquete contiene un fichero no declarado en la Delivery Note.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_EXTRA_FILE.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_EXTRA_FILE.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:05 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:10 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_SIZE_MISMATCH.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_SIZE_MISMATCH.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_SIZE_MISMATCH.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_SIZE_MISMATCH_e52361d6305f4db186da8b1b0efba34c.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_SIZE_MISMATCH_e52361d6305f4db186da8b1b0efba34c\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_SIZE_MISMATCH_e52361d6305f4db186da8b1b0efba34c.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_SIZE_MISMATCH.zip. Motivo: SIZE_MISMATCH. Detalle: SIZE_MISMATCH: El tama¤o real del fichero no coincide con el tama¤o declarado en la Delivery Note.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_SIZE_MISMATCH.zip. Motivo: SIZE_MISMATCH. Detalle: SIZE_MISMATCH: El tama¤o real del fichero no coincide con el tama¤o declarado en la Delivery Note.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_SIZE_MISMATCH.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_SIZE_MISMATCH.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:10 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:15 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_HASH_ALGORITHM.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_HASH_ALGORITHM.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_HASH_ALGORITHM.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_HASH_ALGORITHM_5888400c94c14391b082aba396b6cb95.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_HASH_ALGORITHM_5888400c94c14391b082aba396b6cb95\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_HASH_ALGORITHM_5888400c94c14391b082aba396b6cb95.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_HASH_ALGORITHM.zip. Motivo: HASH_ALGORITHM_NOT_ALLOWED. Detalle: HASH_ALGORITHM_NOT_ALLOWED: El algoritmo de hash declarado no est  permitido por la configuraci¢n.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_HASH_ALGORITHM.zip. Motivo: HASH_ALGORITHM_NOT_ALLOWED. Detalle: HASH_ALGORITHM_NOT_ALLOWED: El algoritmo de hash declarado no est  permitido por la configuraci¢n.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_HASH_ALGORITHM.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\1234\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_HASH_ALGORITHM.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:15 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:20 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_MALFORMED_XML.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_MALFORMED_XML.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_MALFORMED_XML.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_MALFORMED_XML_99a01d4a31384af79a307bea6f8ce910.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_MALFORMED_XML_99a01d4a31384af79a307bea6f8ce910\DeliveryNote.xml.
+fail: Heimdallhash.Services.DeliveryNoteReader[0]
+      Error al leer la Delivery Note desde C:\HeimdallHashData\Temp\HH_INVALID_MALFORMED_XML_99a01d4a31384af79a307bea6f8ce910\DeliveryNote.xml.
+      System.Xml.XmlException: Unexpected end of file has occurred. The following elements are not closed: File, Files, DeliveryNote. Line 1, position 102.
+         at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+         at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+         at System.Xml.XmlTextReaderImpl.ParseElementContent()
+         at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r)
+         at System.Xml.Linq.XDocument.Load(XmlReader reader, LoadOptions options)
+         at System.Xml.Linq.XDocument.Load(String uri, LoadOptions options)
+         at Heimdallhash.Services.DeliveryNoteReader.ReadFromXmlFile(String xmlPath) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\DeliveryNoteReader.cs:line 57
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_MALFORMED_XML_99a01d4a31384af79a307bea6f8ce910.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_MALFORMED_XML.zip. Motivo: DN_XML_READ_ERROR. Detalle: DN_XML_READ_ERROR: Error al leer la Delivery Note: Unexpected end of file has occurred. The following elements are not closed: File, Files, DeliveryNote. Line 1, position 102.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_MALFORMED_XML.zip. Motivo: DN_XML_READ_ERROR. Detalle: DN_XML_READ_ERROR: Error al leer la Delivery Note: Unexpected end of file has occurred. The following elements are not closed: File, Files, DeliveryNote. Line 1, position 102.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_MALFORMED_XML.zip. Libro: C:\HeimdallHashData\LibrosRegistro\SinResolver\Cuarentena\Diarios\20260622_LR_productos_cuarentena_sinresolver.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_MALFORMED_XML.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:20 +02:00
+info: Heimdallhash.Worker[0]
+      Ciclo iniciado: 06/22/2026 21:09:25 +02:00
+info: Heimdallhash.Services.FileProcessor[0]
+      Procesando producto con Delivery Note: HH_INVALID_UNKNOWN_CENTER_9999.zip
+info: Heimdallhash.Services.PackageProcessor[0]
+      Iniciando procesamiento del paquete HH_INVALID_UNKNOWN_CENTER_9999.zip.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Paquete HH_INVALID_UNKNOWN_CENTER_9999.zip extra¡do correctamente en C:\HeimdallHashData\Temp\HH_INVALID_UNKNOWN_CENTER_9999_a56eabe89e264b10a3c6a36bf2518fdf.
+info: Heimdallhash.Services.DeliveryNoteLocator[0]
+      Delivery Note localizada correctamente: C:\HeimdallHashData\Temp\HH_INVALID_UNKNOWN_CENTER_9999_a56eabe89e264b10a3c6a36bf2518fdf\DeliveryNote.xml.
+info: Heimdallhash.Services.ArchiveExtractor[0]
+      Directorio temporal eliminado: C:\HeimdallHashData\Temp\HH_INVALID_UNKNOWN_CENTER_9999_a56eabe89e264b10a3c6a36bf2518fdf.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Producto inv lido: HH_INVALID_UNKNOWN_CENTER_9999.zip. Motivo: DESTINATION_ROUTE_NOT_FOUND. Detalle: DESTINATION_ROUTE_NOT_FOUND: No existe una ruta destino habilitada para el centro 9999 y flujo Download.
+warn: Heimdallhash.Services.FileProcessor[0]
+      Archivo movido a cuarentena: HH_INVALID_UNKNOWN_CENTER_9999.zip. Motivo: DESTINATION_ROUTE_NOT_FOUND. Detalle: DESTINATION_ROUTE_NOT_FOUND: No existe una ruta destino habilitada para el centro 9999 y flujo Download.
+info: Heimdallhash.Services.PackageAuditLogger[0]
+      Producto en cuarentena registrado en libro diario: HH_INVALID_UNKNOWN_CENTER_9999.zip. Libro: C:\HeimdallHashData\LibrosRegistro\Centros\9999\Download\Cuarentena\Diarios\20260622_LR_productos_cuarentena.csv
+fail: Heimdallhash.Services.MailNotifier[0]
+      Error al enviar notificaci¢n QUARANTINE_CREATED para el producto HH_INVALID_UNKNOWN_CENTER_9999.zip.
+      System.InvalidOperationException: No se ha configurado el servidor SMTP.
+         at Heimdallhash.Services.MailNotifier.ValidarConfiguracionCorreo() in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 438
+         at Heimdallhash.Services.MailNotifier.EnviarCorreoAsync(String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 349
+         at Heimdallhash.Services.MailNotifier.EnviarNotificacionAsync(String originalEventId, String notificationType, String packageName, String flow, String centerId, String reasonCode, String asunto, String cuerpo, CancellationToken cancellationToken) in C:\Users\Xende\Documents\SourceCode\HEIMDALLHASH_SourceCode\HeimdallHash-master\HeimdallHash_v2.8_ReleaseWorkspace\HeimdallHash_v2.8_ReleaseWorkspace\Heimdallhash\Services\MailNotifier.cs:line 304
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      Revisando productos pendientes de entrega en: C:\HeimdallHashData\PendienteEntrega
+info: Heimdallhash.Services.PendingDeliveryService[0]
+      No se han encontrado productos f¡sicos en PendienteEntrega.
+info: Heimdallhash.Worker[0]
+      Ciclo finalizado: 06/22/2026 21:09:25 +02:00

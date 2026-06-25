@@ -1,0 +1,12 @@
+﻿TestId;Name;Result;TimestampLocal;Detail
+T01;Producto válido aceptado;PASS;2026-06-22 21:08:31;Producto aceptado y registrado.
+T02;Hash incorrecto a cuarentena;PASS;2026-06-22 21:08:36;Producto en cuarentena y notificación registrada.
+T03;Producto sin XML a cuarentena SinResolver;PASS;2026-06-22 21:08:41;Producto sin XML en SinResolver.
+T04;Producto con dos XML a cuarentena SinResolver;PASS;2026-06-22 21:08:46;Producto con múltiples XML en SinResolver.
+T05;PendienteEntrega y reintento automático;PASS;2026-06-22 21:08:55;Pendiente creado, reintentado y entregado.
+T06;Fichero declarado en DN pero ausente en ZIP;PASS;2026-06-22 21:09:00;Producto con fichero declarado ausente enviado a cuarentena.
+T07;Fichero extra no declarado en DN;PASS;2026-06-22 21:09:05;Producto con fichero extra no declarado enviado a cuarentena.
+T08;Tamaño declarado distinto del real;PASS;2026-06-22 21:09:10;Producto con tamaño incorrecto enviado a cuarentena.
+T09;Algoritmo hash inválido;PASS;2026-06-22 21:09:15;Producto con algoritmo hash inválido enviado a cuarentena.
+T10;XML mal formado;PASS;2026-06-22 21:09:21;Producto con XML mal formado enviado a SinResolver.
+T11;CenterId no configurado en CenterRoutes;PASS;2026-06-22 21:09:26;Producto con CenterId no configurado enviado a cuarentena del centro 9999.
