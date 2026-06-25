@@ -1,0 +1,96 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+out/
+publish/
+release/
+artifacts/
+
+# .NET
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Logs and runtime outputs
+*.log
+logs/
+Logs/
+LogsAplicacion/
+ServiceLogs/
+ErrorLogs/
+
+# HeimdallHash runtime folders
+Temporal/
+Temp/
+Cuarentena/
+SinResolver/
+PendienteEntrega/
+Libros/
+LibrosRegistro/
+RecordBooks/
+Accepted/
+Quarantine/
+PendingDelivery/
+
+# Configuration and secrets
+appsettings.backup.json
+appsettings.*.backup*
+*.pfx
+*.p12
+*.pem
+*.key
+*.cer
+*.crt
+*.env
+secrets.json
+.env
+.env.*
+
+# Generated packages
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Allow synthetic validation packages
+!TestScripts/packages/*.zip
+
+# Test outputs generated locally
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+TestScripts/results/*.log
+TestScripts/appsettings_backup_path.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
