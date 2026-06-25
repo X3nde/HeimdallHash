@@ -1,0 +1,1107 @@
+﻿<Window
+    x:Class="HeimdallhashConfigurator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="HeimdallHash - Configurador"
+        Icon="Resources/heimdallhash.ico"
+    Height="780"
+    Width="1220"
+    MinHeight="720"
+    MinWidth="1100"
+    WindowStartupLocation="CenterScreen"
+    Background="#111820"
+    FontFamily="Segoe UI"
+    FontSize="12"
+    Foreground="#F0F0F0">
+    <Window.Resources>
+        <SolidColorBrush x:Key="FondoPrincipal" Color="#111820"/>
+        <SolidColorBrush x:Key="FondoPanel" Color="#1A1F25"/>
+        <SolidColorBrush x:Key="FondoCampo" Color="#252C35"/>
+        <SolidColorBrush x:Key="FondoCampoHover" Color="#303946"/>
+        <SolidColorBrush x:Key="Dorado" Color="#D6A756"/>
+        <SolidColorBrush x:Key="DoradoSuave" Color="#E2B96D"/>
+        <SolidColorBrush x:Key="DoradoApagado" Color="#6F572D"/>
+        <SolidColorBrush x:Key="TextoClaro" Color="#F0F0F0"/>
+        <SolidColorBrush x:Key="TextoSuave" Color="#B7C0CC"/>
+        <SolidColorBrush x:Key="TextoOscuro" Color="#111820"/>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Margin" Value="0,6,0,2"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="CaretBrush" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="SelectionTextBrush" Value="{StaticResource TextoOscuro}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5,3"/>
+            <Setter Property="Margin" Value="0,0,8,4"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="CaretBrush" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="SelectionTextBrush" Value="{StaticResource TextoOscuro}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5,3"/>
+            <Setter Property="Margin" Value="0,0,8,4"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="Padding" Value="6,4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border x:Name="ItemBorder"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource Dorado}"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5,3"/>
+            <Setter Property="Margin" Value="0,0,8,4"/>
+            <Setter Property="MinHeight" Value="24"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <ToggleButton x:Name="ToggleButton"
+                                          Background="{TemplateBinding Background}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          BorderThickness="{TemplateBinding BorderThickness}"
+                                          Focusable="False"
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          ClickMode="Press">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Border x:Name="ComboBorder"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                Padding="{TemplateBinding Padding}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <ContentPresenter Grid.Column="0"
+                                                                  Margin="3,0,4,0"
+                                                                  VerticalAlignment="Center"
+                                                                  HorizontalAlignment="Left"
+                                                                  RecognizesAccessKey="True"
+                                                                  TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                                                <Path Grid.Column="1"
+                                                      Width="9"
+                                                      Height="6"
+                                                      VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"
+                                                      Fill="{TemplateBinding Foreground}"
+                                                      Data="M 0 0 L 4.5 6 L 9 0 Z"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="ComboBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                                <Setter TargetName="ComboBorder" Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="ComboBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                                <Setter TargetName="ComboBorder" Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="ComboBorder" Property="Background" Value="#151B22"/>
+                                                <Setter TargetName="ComboBorder" Property="BorderBrush" Value="{StaticResource DoradoApagado}"/>
+                                                <Setter Property="Foreground" Value="{StaticResource TextoSuave}"/>
+                                                <Setter Property="Opacity" Value="0.70"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+
+                            <ContentPresenter x:Name="ContentSite"
+                                              IsHitTestVisible="False"
+                                              Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
+                                              Margin="9,3,30,3"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Left"
+                                              TextElement.Foreground="{StaticResource TextoClaro}"/>
+
+                            <Popup x:Name="PART_Popup"
+                                   AllowsTransparency="True"
+                                   Placement="Bottom"
+                                   Focusable="False"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}"
+                                   PopupAnimation="Slide">
+                                <Border Background="{StaticResource FondoCampo}"
+                                        BorderBrush="{StaticResource Dorado}"
+                                        BorderThickness="1"
+                                        MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ScrollViewer MaxHeight="220"
+                                                  Background="{StaticResource FondoCampo}">
+                                        <ItemsPresenter/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                <Setter Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                <Setter Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                <Setter Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.65"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextoSuave}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Margin" Value="0,6,16,4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Border x:Name="CheckBorder"
+                                    Width="15"
+                                    Height="15"
+                                    Background="{StaticResource FondoCampo}"
+                                    BorderBrush="{StaticResource Dorado}"
+                                    BorderThickness="1"
+                                    Margin="0,0,6,0">
+                                <Path x:Name="CheckMark"
+                                      Visibility="Collapsed"
+                                      Stroke="{StaticResource TextoOscuro}"
+                                      StrokeThickness="2"
+                                      Data="M 2 7 L 6 11 L 13 3"/>
+                            </Border>
+                            <ContentPresenter VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckBorder" Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                                <Setter TargetName="CheckBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckBorder" Property="Background" Value="{StaticResource Dorado}"/>
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.55"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="BotonEstilo" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="12,5"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="2"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource DoradoSuave}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource Dorado}"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#151B22"/>
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource DoradoApagado}"/>
+                                <Setter Property="Foreground" Value="#9AA4B2"/>
+                                <Setter Property="Opacity" Value="0.72"/>
+                                <Setter Property="Cursor" Value="Arrow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="BotonPrimario" TargetType="{x:Type Button}" BasedOn="{StaticResource BotonEstilo}">
+            <Setter Property="Background" Value="{StaticResource Dorado}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+        </Style>
+
+        <Style x:Key="BotonRutaEstilo" TargetType="{x:Type Button}" BasedOn="{StaticResource BotonEstilo}">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="PestanaHeimdallStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DoradoApagado}"/>
+            <Setter Property="Padding" Value="14,8"/>
+            <Setter Property="Margin" Value="2,0,2,0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border x:Name="TabBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="5,5,0,0"
+                                Padding="{TemplateBinding Padding}"
+                                Margin="{TemplateBinding Margin}">
+                            <ContentPresenter ContentSource="Header"
+                                              RecognizesAccessKey="True"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="TabBorder" Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{StaticResource Dorado}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="TabBorder" Property="Background" Value="{StaticResource Dorado}"/>
+                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{StaticResource Dorado}"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+                                <Setter Property="Panel.ZIndex" Value="10"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.50"/>
+                                <Setter Property="Foreground" Value="#788391"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource PestanaHeimdallStyle}"/>
+
+        <Style x:Key="TabControlHeimdallStyle" TargetType="{x:Type TabControl}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="{StaticResource FondoPanel}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="ItemContainerStyle" Value="{StaticResource PestanaHeimdallStyle}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid KeyboardNavigation.TabNavigation="Local">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0"
+                                    Background="{StaticResource FondoPanel}"
+                                    BorderBrush="{StaticResource Dorado}"
+                                    BorderThickness="1,1,1,0"
+                                    Padding="4,5,4,0">
+                                <TabPanel IsItemsHost="True"
+                                          KeyboardNavigation.TabIndex="1"
+                                          Background="Transparent"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Background="{StaticResource FondoPanel}"
+                                    BorderBrush="{StaticResource Dorado}"
+                                    BorderThickness="1">
+                                <ContentPresenter x:Name="PART_SelectedContentHost"
+                                                  ContentSource="SelectedContent"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Foreground" Value="{StaticResource Dorado}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="MinWidth" Value="900"/>
+            <Setter Property="MaxWidth" Value="1250"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid Margin="{TemplateBinding Margin}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.RowSpan="2"
+                                    Margin="0,8,0,0"
+                                    Background="Transparent"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="4"/>
+                            <Border Grid.Row="0"
+                                    Margin="10,0,0,0"
+                                    Padding="4,0"
+                                    Background="{StaticResource FondoPanel}"
+                                    HorizontalAlignment="Left">
+                                <ContentPresenter ContentSource="Header"
+                                                  RecognizesAccessKey="True"
+                                                  TextElement.Foreground="{StaticResource Dorado}"/>
+                            </Border>
+                            <ContentPresenter Grid.Row="1"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DoradoApagado}"/>
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+            <Setter Property="Padding" Value="6,4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Background" Value="{StaticResource FondoPanel}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="MinHeight" Value="24"/>
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#202833"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource FondoCampoHover}"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource Dorado}"/>
+                    <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type DataGridCell}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}"/>
+            <Setter Property="BorderBrush" Value="#313B47"/>
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource Dorado}"/>
+                    <Setter Property="Foreground" Value="{StaticResource TextoOscuro}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="DataGridTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGridCell}}}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="4,0,4,0"/>
+        </Style>
+
+        <Style x:Key="DataGridEditingTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Background" Value="{StaticResource FondoCampo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="CaretBrush" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="Padding" Value="4,1"/>
+        </Style>
+
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{StaticResource FondoPanel}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextoClaro}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Dorado}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="{StaticResource FondoPanel}"/>
+            <Setter Property="AlternatingRowBackground" Value="#202833"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#313B47"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#313B47"/>
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="Margin" Value="0,8,0,8"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources\heimdallhash_logo.png"
+                        Opacity="0.08"
+                        Stretch="Uniform"
+                        AlignmentX="Center"
+                        AlignmentY="Center"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#1A1F25" BorderBrush="{StaticResource Dorado}" BorderThickness="1" CornerRadius="8" Padding="12" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="Resources/heimdallhash_logo.png" Height="58" Width="58" Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Configurador de HeimdallHash" FontSize="23" FontWeight="Bold"/>
+                    <TextBlock Text="Instalación, mantenimiento y validación de la configuración" Foreground="{StaticResource TextoSuave}" Margin="0,4,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Ellipse x:Name="EstadoIcono" Width="14" Height="14" Stroke="{StaticResource Dorado}" StrokeThickness="1" Margin="0,2,8,0"/>
+                        <TextBlock x:Name="EstadoTexto" FontWeight="Bold" Text="Servicio: comprobando..."/>
+                    </StackPanel>
+                    <TextBlock x:Name="AdminTexto" Foreground="{StaticResource TextoSuave}" HorizontalAlignment="Right" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#1A1F25" BorderBrush="#35404C" BorderThickness="1" CornerRadius="6" Padding="8" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Column="0">
+                    <Label Content="Archivo de configuración:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox x:Name="RutaJsonBox" IsReadOnly="True" MinWidth="550"/>
+                </DockPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button Style="{StaticResource BotonEstilo}" Content="Cargar JSON" Click="CargarJson_Click"/>
+                    <Button Style="{StaticResource BotonPrimario}" Content="Guardar configuración" Click="Guardar_Click"/>
+                    <Button Style="{StaticResource BotonEstilo}" Content="Validar" Click="Validar_Click"/>
+                    <Button Style="{StaticResource BotonEstilo}" Content="Cerrar" Click="Cerrar_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <TabControl Grid.Row="2" x:Name="PestanasConfiguracion" Style="{StaticResource TabControlHeimdallStyle}">
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Inicio">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Modo de uso">
+                            <StackPanel>
+                                <TextBlock Text="Este configurador permite realizar una instalación inicial guiada y tareas de mantenimiento posterior." TextWrapping="Wrap"/>
+                                <TextBlock Text="Las acciones sobre el servicio Windows requieren ejecutar la herramienta como administrador." Foreground="{StaticResource TextoSuave}" Margin="0,8,0,0" TextWrapping="Wrap"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                    <Button Style="{StaticResource BotonPrimario}" Content="Validar configuración" Click="Validar_Click"/>
+                                    <Button Style="{StaticResource BotonEstilo}" Content="Crear directorios internos" Click="CrearDirectorios_Click"/>
+                                    <Button Style="{StaticResource BotonEstilo}" Content="Abrir carpeta de libros" Click="AbrirLibros_Click"/>
+                                    <Button Style="{StaticResource BotonEstilo}" Content="Abrir carpeta de logs" Click="AbrirLogs_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="Resumen">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Rutas de entrada:" FontWeight="Bold"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="ResumenWatchRoutesText"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Centros/destinos:" FontWeight="Bold"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ResumenCenterRoutesText"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Notificaciones:" FontWeight="Bold"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="ResumenNotificationsText"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="PendienteEntrega:" FontWeight="Bold"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="ResumenPendingText"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="General">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Ejecución">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="220"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Intervalo de ciclo (segundos):"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="PollingIntervalBox"/>
+                                <Label Grid.Row="0" Grid.Column="2" Content="Concurrencia:"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" x:Name="ConcurrencyLevelBox"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Reintentos de fichero:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="RetryMaxAttemptsBox"/>
+                                <Label Grid.Row="1" Grid.Column="2" Content="Espera entre reintentos (ms):"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" x:Name="RetryDelayMillisecondsBox"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Edad mínima del fichero (s):"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="MinFileAgeSecondsBox"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Rutas de entrada">
+                <DockPanel Margin="14" MaxWidth="1450" HorizontalAlignment="Center">
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button Style="{StaticResource BotonPrimario}" Content="Añadir ruta" Click="AnadirWatchRoute_Click"/>
+                        <Button Style="{StaticResource BotonEstilo}" Content="Eliminar seleccionada" Click="EliminarWatchRoute_Click"/>
+                    </StackPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Rutas funcionales externas monitorizadas. El servicio no debe crear estas rutas automáticamente salvo política explícita." Foreground="{StaticResource TextoSuave}" TextWrapping="Wrap" Margin="4,4,4,0"/>
+                    <DataGrid x:Name="WatchRoutesGrid" MinHeight="430" MaxWidth="1400" HorizontalAlignment="Stretch">
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="Activa" Binding="{Binding Enabled}" Width="70"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Nombre" Binding="{Binding Name}" Width="160"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Flujo" Binding="{Binding Flow}" Width="90"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Modo validación" Binding="{Binding ValidationMode}" Width="130"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Directorio entrada" Binding="{Binding InputDirectory}" Width="*"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Salida opcional" Binding="{Binding OutputDirectory}" Width="*"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Cuarentena opcional" Binding="{Binding QuarantineDirectory}" Width="*"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Temporal opcional" Binding="{Binding TempDirectory}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Centros y destinos">
+                <DockPanel Margin="14" MaxWidth="1450" HorizontalAlignment="Center">
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button Style="{StaticResource BotonPrimario}" Content="Añadir centro/destino" Click="AnadirCenterRoute_Click"/>
+                        <Button Style="{StaticResource BotonEstilo}" Content="Eliminar seleccionado" Click="EliminarCenterRoute_Click"/>
+                    </StackPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Relación entre DestinationCenterId, flujo y destino funcional. Esta tabla es crítica para el enrutamiento de productos válidos." Foreground="{StaticResource TextoSuave}" TextWrapping="Wrap" Margin="4,4,4,0"/>
+                    <DataGrid x:Name="CenterRoutesGrid" MinHeight="430" MaxWidth="1400" HorizontalAlignment="Stretch">
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="Activo" Binding="{Binding Enabled}" Width="70"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="CenterId" Binding="{Binding CenterId}" Width="100"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Flujo" Binding="{Binding Flow}" Width="90"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Ruta destino" Binding="{Binding DestinationPath}" Width="*"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Descripción" Binding="{Binding Description}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Almacenamiento">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Rutas internas gestionadas">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="230"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="46"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Temporal:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="StorageTempDirectoryBox"/>
+                                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="StorageTempDirectoryBox" Click="SeleccionarDirectorio_Click"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Temporal extracción:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="ArchiveTemporaryDirectoryBox"/>
+                                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="ArchiveTemporaryDirectoryBox" Click="SeleccionarDirectorio_Click"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Cuarentena:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="QuarantineRootBox"/>
+                                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="QuarantineRootBox" Click="SeleccionarDirectorio_Click"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="PendienteEntrega:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="PendingRootBox"/>
+                                <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="PendingRootBox" Click="SeleccionarDirectorio_Click"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Libros de registro:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="RecordBooksRootBox"/>
+                                <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="RecordBooksRootBox" Click="SeleccionarDirectorio_Click"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Logs técnicos:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="ApplicationLogsRootBox"/>
+                                <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Tag="ApplicationLogsRootBox" Click="SeleccionarDirectorio_Click"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Política de directorios">
+                            <WrapPanel>
+                                <CheckBox x:Name="ValidateDirectoriesOnStartupBox" Content="Validar directorios al arrancar"/>
+                                <CheckBox x:Name="AskUserBeforeCreatingDirectoriesFromConfiguratorBox" Content="Preguntar antes de crear desde configurador"/>
+                                <CheckBox x:Name="AllowConfiguratorToCreateMissingDirectoriesBox" Content="Permitir crear directorios desde configurador"/>
+                                <CheckBox x:Name="AllowServiceToCreateInternalDirectoriesBox" Content="Servicio puede crear rutas internas"/>
+                                <CheckBox x:Name="AllowServiceToCreateFlowDirectoriesBox" Content="Servicio puede crear rutas funcionales externas"/>
+                                <CheckBox x:Name="DisableRouteWhenInputDirectoryIsMissingBox" Content="Deshabilitar ruta si origen no existe"/>
+                                <CheckBox x:Name="UsePendingDeliveryWhenDestinationIsMissingBox" Content="Usar PendienteEntrega si destino no existe"/>
+                            </WrapPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Validación y hashes">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Hash">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Algoritmo por defecto:"/>
+                                <ComboBox Grid.Column="1" x:Name="DefaultHashCombo">
+                                    <ComboBoxItem Content="SHA256"/>
+                                    <ComboBoxItem Content="SHA384"/>
+                                    <ComboBoxItem Content="SHA512"/>
+                                    <ComboBoxItem Content="SHA1"/>
+                                    <ComboBoxItem Content="MD5"/>
+                                </ComboBox>
+                                <WrapPanel Grid.Column="2">
+                                    <CheckBox x:Name="HashMd5Box" Content="MD5"/>
+                                    <CheckBox x:Name="HashSha1Box" Content="SHA1"/>
+                                    <CheckBox x:Name="HashSha256Box" Content="SHA256"/>
+                                    <CheckBox x:Name="HashSha384Box" Content="SHA384"/>
+                                    <CheckBox x:Name="HashSha512Box" Content="SHA512"/>
+                                </WrapPanel>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Procesamiento de comprimidos">
+                            <StackPanel>
+                                <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="230"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="46"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Extractor principal:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="ExtractorModeBox"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Ruta 7z.exe:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="SevenZipExecutablePathBox"/>
+                                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Click="SeleccionarSevenZip_Click"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Extensiones soportadas:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="SupportedExtensionsBox" ToolTip="Separar por ; o ,"/>
+                                </Grid>
+                                <WrapPanel Margin="0,8,0,0">
+                                    <CheckBox x:Name="EnableSevenZipFallbackBox" Content="Usar 7-Zip como fallback"/>
+                                    <CheckBox x:Name="RejectPasswordProtectedArchivesBox" Content="Rechazar protegidos con contraseña"/>
+                                    <CheckBox x:Name="CleanArchiveTemporaryFilesBox" Content="Limpiar temporales de extracción"/>
+                                    <CheckBox x:Name="CleanStorageTemporaryFilesBox" Content="Limpiar temporales generales"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Cuarentena">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Configuración de cuarentena">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="250"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Grid.Row="0" Grid.Column="0" Content="Carpeta centros:"/>
+                                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="QuarantineCentersDirectoryNameBox"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Carpeta sin resolver:"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="QuarantineUnresolvedDirectoryNameBox"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Carpeta productos:"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="QuarantineProductsDirectoryNameBox"/>
+                                </Grid>
+                                <WrapPanel>
+                                    <CheckBox x:Name="AllowManualRetryFromGuiBox" Content="Permitir reintento manual desde interfaz"/>
+                                    <CheckBox x:Name="AllowManualReleaseWithoutValidationBox" Content="Permitir liberación sin validación"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="PendienteEntrega">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Productos pendientes de entrega">
+                            <StackPanel>
+                                <WrapPanel>
+                                <CheckBox x:Name="PendingEnabledBox" Content="Habilitar PendienteEntrega"/>
+                                <CheckBox x:Name="MoveToQuarantineAfterMaxPendingDaysBox" Content="Mover a cuarentena al superar días máximos"/>
+                                <CheckBox x:Name="RevalidateBeforeFinalDeliveryBox" Content="Revalidar antes de entrega final"/>
+                                <CheckBox x:Name="RequireDestinationWriteProbeBox" Content="Comprobar escritura en destino"/>
+                            </WrapPanel>
+                            <Grid Margin="0,8,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="180"/>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="180"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Reintentar cada ciclos:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="PendingRetryEveryCyclesBox"/>
+                                <Label Grid.Row="0" Grid.Column="2" Content="Máximo intentos (0 sin límite):"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" x:Name="PendingMaxRetryAttemptsBox"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Notificar tras ciclos fallidos:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="PendingNotifyAfterFailedCyclesBox"/>
+                                <Label Grid.Row="1" Grid.Column="2" Content="Días máximos pendiente (0 sin límite):"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" x:Name="PendingMaxPendingDaysBox"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Carpeta centros:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="PendingCentersDirectoryNameBox"/>
+                                <Label Grid.Row="2" Grid.Column="2" Content="Carpeta productos:"/>
+                                <TextBox Grid.Row="2" Grid.Column="3" x:Name="PendingProductsDirectoryNameBox"/>
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Libros y logs">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Opciones básicas">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="230"/>
+                                        <ColumnDefinition Width="220"/>
+                                        <ColumnDefinition Width="230"/>
+                                        <ColumnDefinition Width="220"/>
+                                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Separador LR:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="RecordBooksDelimiterBox"/>
+                                <Label Grid.Row="0" Grid.Column="2" Content="Separador logs:"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" x:Name="ApplicationLogsDelimiterBox"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Reintentos escritura LR:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="RecordBooksMaxWriteAttemptsBox"/>
+                                <Label Grid.Row="1" Grid.Column="2" Content="Reintentos escritura logs:"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" x:Name="ApplicationLogsMaxWriteAttemptsBox"/>
+                            </Grid>
+                                <WrapPanel>
+                                    <CheckBox x:Name="MergePreviousDaysOnCycleStartBox" Content="Consolidar diarios antiguos al iniciar"/>
+                                    <CheckBox x:Name="MoveDailyToArchiveAfterMergeBox" Content="Mover diarios consolidados a Archivo"/>
+                                    <CheckBox x:Name="DeleteDailyAfterMonthlyMergeBox" Content="Eliminar diarios tras consolidar"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <Expander Header="Opciones avanzadas de libros de registro" Foreground="{StaticResource Dorado}" Margin="0,0,0,12">
+                            <StackPanel Margin="0,8,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="260"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Content="Patrón aceptados diario:"/>
+                                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="AcceptedDailyPatternBox"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Patrón cuarentena diario:"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="QuarantineDailyPatternBox"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Patrón pendiente diario:"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="PendingDeliveryDailyPatternBox"/>
+                                    <Label Grid.Row="3" Grid.Column="0" Content="Patrón notificaciones diario:"/>
+                                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="NotificationsDailyPatternBox"/>
+                                    <Label Grid.Row="4" Grid.Column="0" Content="Patrón acciones manuales diario:"/>
+                                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="ManualActionsDailyPatternBox"/>
+                                </Grid>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Notificaciones y SMTP">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="SMTP" MinWidth="1100">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="190"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="180"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Grid.Row="0" Grid.Column="0" Content="Servidor SMTP:"/>
+                                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="SmtpServerBox"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Content="Puerto:"/>
+                                    <TextBox Grid.Row="0" Grid.Column="3" x:Name="SmtpPortBox"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Remitente:"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="SenderBox"/>
+                                    <Label Grid.Row="1" Grid.Column="2" Content="Asunto base:"/>
+                                    <TextBox Grid.Row="1" Grid.Column="3" x:Name="EmailSubjectBox"/>
+
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Destinatarios (;):"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="RecipientsBox"/>
+
+                                    <Label Grid.Row="3" Grid.Column="0" Content="Nueva contraseña SMTP:"/>
+                                    <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="EmailPasswordBox"/>
+                                    <CheckBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" x:Name="UpdatePasswordBox" Content="Actualizar contraseña cifrada con DPAPI LocalMachine"/>
+                                </Grid>
+                                <WrapPanel>
+                                    <CheckBox x:Name="EmailEnableSslBox" Content="SSL/TLS"/>
+                                    <CheckBox x:Name="EmailUseCredentialsBox" Content="Usar credenciales"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="Eventos de notificación">
+                            <StackPanel>
+                                <WrapPanel>
+                                    <CheckBox x:Name="NotificationsEnabledBox" Content="Notificaciones habilitadas"/>
+                                    <CheckBox x:Name="NotifyOnQuarantineBox" Content="Cuarentena"/>
+                                    <CheckBox x:Name="NotifyOnPendingCreatedBox" Content="Pendiente creado"/>
+                                    <CheckBox x:Name="NotifyOnPendingDeliveredBox" Content="Pendiente entregado"/>
+                                    <CheckBox x:Name="NotifyOnPendingStillFailedBox" Content="Pendiente sigue fallando"/>
+                                    <CheckBox x:Name="PreventDuplicateNotificationsBox" Content="Evitar duplicadas"/>
+                                    <CheckBox x:Name="RetryPendingNotificationsBox" Content="Reintentar fallidas"/>
+                                </WrapPanel>
+                                <Grid Margin="0,8,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Máximo intentos notificación:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="MaxNotificationAttemptsBox"/>
+                                <Label Grid.Row="1" Grid.Column="0" Content="Umbral pendiente fallido:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="NotifyPendingStillFailedAfterCyclesBox"/>
+                                <Label Grid.Row="2" Grid.Column="0" Content="Prefijo cuarentena:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="QuarantineSubjectPrefixBox"/>
+                                <Label Grid.Row="3" Grid.Column="0" Content="Prefijo pendiente creado:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="PendingCreatedSubjectPrefixBox"/>
+                                <Label Grid.Row="4" Grid.Column="0" Content="Prefijo pendiente entregado:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="PendingDeliveredSubjectPrefixBox"/>
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Servicio Windows">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="14" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}}">
+                        <GroupBox Header="Instalación y control del servicio">
+                            <StackPanel>
+                                <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="46"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Nombre del servicio:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="ServiceNameBox"/>
+                                <Label Grid.Row="1" Grid.Column="0" Content="Nombre visible:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="ServiceDisplayNameBox"/>
+                                <Label Grid.Row="2" Grid.Column="0" Content="Ruta ejecutable:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="ServiceExecutablePathBox"/>
+                                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource BotonRutaEstilo}" Content="..." Click="SeleccionarEjecutableServicio_Click"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Tipo de inicio:"/>
+                                <ComboBox Grid.Row="3" Grid.Column="1" x:Name="ServiceStartTypeCombo">
+                                    <ComboBoxItem Content="Automático"/>
+                                    <ComboBoxItem Content="Manual"/>
+                                </ComboBox>
+                                </Grid>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                    <Button x:Name="InstalarServicioButton" Style="{StaticResource BotonPrimario}" Content="Instalar servicio" Click="InstalarServicio_Click"/>
+                                    <Button x:Name="DesinstalarServicioButton" Style="{StaticResource BotonEstilo}" Content="Desinstalar servicio" Click="DesinstalarServicio_Click"/>
+                                    <Button x:Name="IniciarServicioButton" Style="{StaticResource BotonEstilo}" Content="Iniciar" Click="IniciarServicio_Click"/>
+                                    <Button x:Name="DetenerServicioButton" Style="{StaticResource BotonEstilo}" Content="Detener" Click="DetenerServicio_Click"/>
+                                    <Button x:Name="ReiniciarServicioButton" Style="{StaticResource BotonEstilo}" Content="Reiniciar" Click="ReiniciarServicio_Click"/>
+                                    <Button Style="{StaticResource BotonEstilo}" Content="Actualizar estado" Click="ActualizarEstado_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Style="{StaticResource PestanaHeimdallStyle}" Header="Validar configuración">
+                <DockPanel Margin="14" MaxWidth="1450" HorizontalAlignment="Center">
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button Style="{StaticResource BotonPrimario}" Content="Ejecutar validación" Click="Validar_Click"/>
+                        <Button Style="{StaticResource BotonEstilo}" Content="Crear directorios internos" Click="CrearDirectorios_Click"/>
+                    </StackPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="La validación muestra errores bloqueantes y advertencias antes de guardar o poner en servicio la aplicación." Foreground="{StaticResource TextoSuave}" Margin="4,4,4,8"/>
+                    <DataGrid x:Name="ValidacionGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" MaxWidth="1400" HorizontalAlignment="Stretch">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Nivel" Binding="{Binding Nivel}" Width="120"/>
+                            <DataGridTextColumn ElementStyle="{StaticResource DataGridTextBlockStyle}" EditingElementStyle="{StaticResource DataGridEditingTextBoxStyle}" Header="Mensaje" Binding="{Binding Mensaje}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+
+        <TextBlock Grid.Row="3" x:Name="StatusBarText" Text="Listo." Foreground="{StaticResource TextoSuave}" Margin="4,8,4,0"/>
+    </Grid>
+</Window>
